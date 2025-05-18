@@ -1,0 +1,16 @@
+exchanges:
+  coinbase:
+    fee: 0.006
+    key_env: COINBASE_KEY
+    secret_env: COINBASE_SECRET
+  kraken:
+    fee: 0.0026
+    key_env: KRAKEN_KEY
+    secret_env: KRAKEN_SECRET
+symbols:
+  - BTC/USDT
+  - ETH/USDT
+  - XRP/USDT
+poll_interval_ms: 5000
+profit_threshold: 0.005
+risk_factor: 0.5

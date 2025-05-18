@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: bot/Dockerfile
+    environment:
+      - EXCHANGES=coinbase,kraken,okx
+      - SYMBOLS=BTC-USDT,ETH-USDT
+      - EDGE_THRESHOLD=0.001
+      - ORDER_SIZE_USD=50
+      - API_KEYS_JSON={"coinbase":{"apiKey":"${COINBASE_KEY}","secret":"${COINBASE_SECRET}"},"kraken":{"apiKey":"${KRAKEN_KEY}","secret":"${KRAKEN_SECRET}"},"okx":{"apiKey":"${OKX_KEY}","secret":"${OKX_SECRET}"}}
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
